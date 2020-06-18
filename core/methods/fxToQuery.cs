@@ -180,172 +180,24 @@ namespace Lider_Unilever.core.methods {
         #endregion
 
         #region vendor
-        public static void uVendedor (string Path) => huacho.uVendedor (Path);
+        public static void Vendor (string Path) => huacho.uVendedor (Path);
         #endregion
 
         #region client
-        public static string Cliente (string Schema) {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length - 2)}.Cliente";
-                bky.WriteToServer (fxToTable.Get (huacho.Cliente (Schema).ToList ()));
+        public static string Client(string Schema)
+        {
+            Counter.Reset();
+            Counter.Start();
+            using (var bky = new SqlBulkCopy(Properties.getConnectionLocaldb))
+            {
+                bky.DestinationTableName = "DismarHuacho.Cliente";
+                bky.WriteToServer(Fucntions.ToDataTable(SqlQueryDesign.Cliente()));
             }
-            Counter.Stop ();
+            Counter.Stop();
             return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
         }
         #endregion
-        public static string Documento (DateTime StartDate, DateTime EndDate, string schema) {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length - 2)}.Documento";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Documento (StartDate, EndDate)));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string DetaDoc (DateTime StartDate, DateTime EndDate) {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Detadoc";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.DetaDoc (StartDate, EndDate)));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string DocTipo () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.DocTipo";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.DocTipo ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Faltante () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Faltante";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Faltante ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Marca () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Marca";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Marca ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Movimientos (DateTime EndDate) {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Movimientos";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Movimientos (EndDate)));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Producto () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                var t = Fucntions.ToDataTable (SqlQueryDesign.Producto ());
-                bky.DestinationTableName = "DismarHuacho.Producto";
-                bky.WriteToServer (t); //Fucntions.ToDataTable(SqlQueryDesign.Producto()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Proveedor () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Proveedor";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Proveedor ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Provincia () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Provincia";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Provincia ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Referencia () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Referencia";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Referencia ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Region () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Region";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Region ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Personal () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "[DismarHuacho].[RepVentas]";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Personal ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string TipoNegocio () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.TipoNegocio";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.TipoNegocio ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string Zona () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Zona";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.Zona ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
-        public static string ZonaPersonal () {
-            Counter.Reset ();
-            Counter.Start ();
-            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
-                bky.DestinationTableName = "DismarHuacho.Zona_Personal";
-                bky.WriteToServer (Fucntions.ToDataTable (SqlQueryDesign.ZonaPersonal ()));
-            }
-            Counter.Stop ();
-            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
-        }
+        
 
     }
 
