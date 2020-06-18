@@ -1,0 +1,462 @@
+﻿{
+   "ContextClassName": "Liderhuacho18Context",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "Lider.Huacho.Model",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[accesos]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[banco]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[bonificab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[bonifidet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[bsccabecera]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[bscproducto]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CABCAJA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CabCierre]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CabReparto]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cabreq]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[canjelet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[canjes]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[categoria]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cheque]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CHOFERES]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cierre]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cierreopera]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[clase]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CLIENTE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[comisioncab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ComisionLineaMarca]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ComisionLineaPro]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[compracab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[concursoxcantidad]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[concursoxcantidad_det]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CPEEstado]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotacab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotagrupocab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotagrupodet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotalcab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotamcab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotamdet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotamdet_marca]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[cuotapcab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Departamento]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DETADOC]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DETAGUIA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[detinven]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DETLIQUI]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DETPEDIDO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DetReparto]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Distrito]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DOCTIPO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DOCUMENTO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EscalaCab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EscalaDet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[FACTURAOTROS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[faltante]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[FORMAPAGO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[FuerzaVentas]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[grupo]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[gruposxproveedor]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[GUIAREMIS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[incentivogrupo]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[incentivoxcobertura]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[incentivoxcobertura_det]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[INFREPARTO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[infrepartocab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[infrepartodevol]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[infrepartodscto]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[INVENTARIO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[inventariocuentascab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[inventariocuentasdet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[LINEA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[LINEAPROVEEDOR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[LIQUIDACION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MARCA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[marcasxproveedor]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MODIDATOS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[movlotes]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[nlinea]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[NOTACREDITOC]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[OBSERVACIONES]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[oferta]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ordencab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PaqueteProducto]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PARAMETRO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[pdiversos]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PEDIDO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PERSONAL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[plancuen]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PlanillaCobC]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PlanillaCobD]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PRODUCTO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PRODUCTO_SURTIDO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PROVEEDOR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[provincia]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[referencia]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Region]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[REPARTO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[REPARTO_PERSONAL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[RUTAS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SaldoCtaCli]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[sku]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[spiGuiaCab]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SunatDet]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SURTIDO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_GRAFICO]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_GRUPO_BONIFICACION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_IDIOMA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_IDIOMAS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_MAESTRO_BONIFICACION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_PARAM_INDICADOR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TBL_POSICION_GRAFICOS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TIPOCLI]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TIPONEG]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TIPOPERSONA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[VEHICULOS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ZONA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ZONA_PERSONAL]"
+      }
+   ],
+   "UseDatabaseNames": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}
