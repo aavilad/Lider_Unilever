@@ -184,20 +184,212 @@ namespace Lider_Unilever.core.methods {
         #endregion
 
         #region client
-        public static string Client(string Schema)
-        {
-            Counter.Reset();
-            Counter.Start();
-            using (var bky = new SqlBulkCopy(Properties.getConnectionLocaldb))
-            {
-                bky.DestinationTableName = "DismarHuacho.Cliente";
-                bky.WriteToServer(Fucntions.ToDataTable(SqlQueryDesign.Cliente()));
+        public static string Client (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Cliente";
+                bky.WriteToServer (fxToTable.Get (huacho.Cliente (Schema).ToList ()));
             }
-            Counter.Stop();
+            Counter.Stop ();
             return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
         }
         #endregion
-        
+
+        #region ticket
+        public static string Ticket (DateTime StartDate, DateTime EndDate, string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Documento";
+                bky.WriteToServer (fxToTable.Get (huacho.Documento (StartDate, EndDate, Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region ticket-details
+        public static string TicketDetail (DateTime StartDate, DateTime EndDate, string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Detadoc";
+                bky.WriteToServer (fxToTable.Get (huacho.DetaDoc (StartDate, EndDate, Schema)));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region ticket-type
+        public static string TicketType (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.DocTipo";
+                bky.WriteToServer (fxToTable.Get (huacho.DocTipo (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region missing
+        public static string Missing (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Faltante";
+                bky.WriteToServer (fxToTable.Get (huacho.Faltante (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region brand
+        public static string Brand (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Marca";
+                bky.WriteToServer (fxToTable.Get (huacho.Marca (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region movement
+        public static string Movement (DateTime EndDate, string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Movimientos";
+                bky.WriteToServer (fxToTable.Get (huacho.Movimientos (EndDate, Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region product
+        public static string Product (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Producto";
+                bky.WriteToServer (fxToTable.Get (huacho.Producto (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region proveedor
+        public static string Provider (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Proveedor";
+                bky.WriteToServer (fxToTable.Get (huacho.Proveedor (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region province
+        public static string Province (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Provincia";
+                bky.WriteToServer (fxToTable.Get (huacho.Provincia (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region reference
+        public static string Reference (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Referencia";
+                bky.WriteToServer (fxToTable.Get (huacho.Referencia (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region region
+        public static string Region (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Region";
+                bky.WriteToServer (fxToTable.Get (huacho.Region (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region personal-vendor
+        public static string Personal (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.[RepVentas]";
+                bky.WriteToServer (fxToTable.Get (huacho.Personal (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region business-type
+        public static string BsuinessType (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.TipoNegocio";
+                bky.WriteToServer (fxToTable.Get (huacho.TipoNegocio (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region zone
+        public static string Zone (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Zona";
+                bky.WriteToServer (fxToTable.Get (huacho.Zona (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
+
+        #region zone-personal
+        public static string ZonaPersonal (string Schema) {
+            Counter.Reset ();
+            Counter.Start ();
+            using (var bky = new SqlBulkCopy (models.ConnectionString.dbLocal)) {
+                bky.DestinationTableName = $"{Schema.Substring(0,Schema.Length-2)}.Zona_Personal";
+                bky.WriteToServer (fxToTable.Get (huacho.ZonaPersonal (Schema).ToList ()));
+            }
+            Counter.Stop ();
+            return $"{Counter.Elapsed.ToString(@"hh\:mm\:ss\:fff")}";
+        }
+        #endregion
 
     }
 
